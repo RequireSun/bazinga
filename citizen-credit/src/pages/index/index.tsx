@@ -1,6 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
-import './index.css';
+// import Button from 'antd/es/button';
+// import 'antd/es/button/style';
+import { Button } from 'antd';
+
+import './index.less';
 
 function App() {
   return (
@@ -10,6 +14,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Button type="primary">Hello, Ant Design!</Button>
         <a
           className="App-link"
           href="https://reactjs.org"
