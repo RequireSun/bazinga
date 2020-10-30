@@ -1,0 +1,28 @@
+@import "../../styles/theme.less";
+
+.navigator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 42px;
+  padding: 0 8px;
+  background-color: @main-color;
+  color: #fff;
+
+  &-left {
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    * {
+      margin-left: 5px;
+    }
+  }
+}

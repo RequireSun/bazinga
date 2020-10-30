@@ -2,6 +2,7 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import classNames from 'classnames';
 import Cover from '../cover';
+import Navigator from '../navigator';
 import { Device } from '../../stores/';
 
 import './index.less';
@@ -27,6 +28,7 @@ export default class Preview extends React.Component<Props, any> {
         return (
             <div className={classNames('preview-container', device.replace(/\s/g, '-').toLowerCase())}>
                 <Cover />
+                <Navigator />
             </div>
         );
     }
