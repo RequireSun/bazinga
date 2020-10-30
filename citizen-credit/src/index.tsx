@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Index from './pages/index';
+import Store from './stores';
+import { Provider } from 'mobx-react';
 import reportWebVitals from './reportWebVitals';
 
-import './index.css';
+import './index.less';
+
+const store = new Store();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Index />
+      <Provider store={store}>
+          <Index />
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

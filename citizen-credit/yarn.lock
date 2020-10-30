@@ -1587,6 +1587,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/classnames@^2.2.11":
+  version "2.2.11"
+  resolved "https://registry.npm.alibaba-inc.com/@types/classnames/download/@types/classnames-2.2.11.tgz#2521cc86f69d15c5b90664e4829d84566052c1cf"
+  integrity sha1-JSHMhvadFcW5BmTkgp2EVmBSwc8=
+
 "@types/eslint@^7.2.0":
   version "7.2.4"
   resolved "https://registry.npm.alibaba-inc.com/@types/eslint/download/@types/eslint-7.2.4.tgz#d12eeed7741d2491b69808576ac2d20c14f74c41"
@@ -7433,6 +7438,23 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   version "1.0.4"
   resolved "https://registry.npm.alibaba-inc.com/mkdirp/download/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
+
+mobx-react-lite@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.npm.alibaba-inc.com/mobx-react-lite/download/mobx-react-lite-3.0.1.tgz#417f54a819d1e3e00c073077f29373399c95b005"
+  integrity sha1-QX9UqBnR4+AMBzB38pNzOZyVsAU=
+
+mobx-react@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.npm.alibaba-inc.com/mobx-react/download/mobx-react-7.0.0.tgz#c2eb0c3f79ade93ffb07b1ffa07cbaeb5f04e9b6"
+  integrity sha1-wusMP3mt6T/7B7H/oHy6618E6bY=
+  dependencies:
+    mobx-react-lite "^3.0.0"
+
+mobx@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.npm.alibaba-inc.com/mobx/download/mobx-6.0.1.tgz#ec23520848527bf7834d7b4c0b54b2a8eb6e7c14"
+  integrity sha1-7CNSCEhSe/eDTXtMC1SyqOtufBQ=
 
 moment@^2.24.0, moment@^2.25.3:
   version "2.29.1"
