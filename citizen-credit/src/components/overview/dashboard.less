@@ -1,13 +1,14 @@
 @max-deg: 120;
+@water-drop-unit: 4px;
 
 .transform(@total, @counter) when(@counter < ((@total + 1) / 2)) {
-  transform: rotate(-(@max-deg / ((@total - 1) / 2) * ((@total + 1) / 2 - @counter)) * 1deg) translate(0, -80px);
+  transform: rotate(-(@max-deg / ((@total - 1) / 2) * ((@total + 1) / 2 - @counter)) * 1deg) translate(0, -@water-drop-unit * 18);
 }
 .transform(@total, @counter) when(@counter = ((@total + 1) / 2)) {
-  transform: translate(0, -80px);
+  transform: translate(0, -@water-drop-unit * 18);
 }
 .transform(@total, @counter) when(@counter > ((@total + 1) / 2)) {
-  transform: rotate((@max-deg / ((@total - 1) / 2) * (@counter - (@total + 1) / 2)) * 1deg) translate(0, -80px);
+  transform: rotate((@max-deg / ((@total - 1) / 2) * (@counter - (@total + 1) / 2)) * 1deg) translate(0, -@water-drop-unit * 18);
 }
 
 .loop(@total, @counter: 1) when(@counter <= @total) {
@@ -23,14 +24,24 @@
   align-items: center;
 
   .icon.icon-water-drop {
-    width: 6px;
-    height: 12px;
+    width: @water-drop-unit;
+    height: @water-drop-unit * 2;
+  }
+
+  &-bd {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 200px;
+    height: 120px;
+    margin-top: 60px;
   }
 
   &-round {
     width: 200px;
     height: 160px;
-    position: relative;
+    position: absolute;
 
     .icon-water-drop {
       position: absolute;
@@ -41,5 +52,10 @@
 
     .loop(25);
     //&:nth-of-type(1) {}
+  }
+
+  &-score {
+    font-size: 44px;
+    font-weight: bold;
   }
 }

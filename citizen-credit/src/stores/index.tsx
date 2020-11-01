@@ -7,4 +7,6 @@ export enum Device {
 export default class Store {
     @observable
     device: Device = Device.iPhone8Plus;
+    @observable
+    score: number = 999;
 }
