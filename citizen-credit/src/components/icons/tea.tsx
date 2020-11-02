@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './tea.less';
+
 // https://www.iconfont.cn/collections/detail?spm=a313x.7781069.0.da5a778a4&cid=19974
 export default () => (
-    <svg className="icon" viewBox="0 0 1024 1024">
+    <svg className="icon icon-tea" viewBox="0 0 1024 1024">
         <path d="M1023.99 650.652l-127.998 128-767.984-128L0.01 309.348l127.998-127.998h895.982z" fill="#CE3649"/>
         <path d="M895.992 309.348H0.01l127.998-127.998h895.982z" fill="#D94452" />
         <path d="M0.01 309.348h895.982v469.304H0.01z" fill="#EC5564" />

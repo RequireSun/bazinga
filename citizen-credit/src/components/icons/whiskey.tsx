@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './whiskey.less';
+
 // https://www.iconfont.cn/collections/detail?spm=a313x.7781069.0.da5a778a4&cid=19974
 export default () => (
-    <svg className="icon" viewBox="0 0 1024 1024">
+    <svg className="icon icon-whiskey" viewBox="0 0 1024 1024">
         <path
             d="M618.652 639.998v362.646c0 11.782 9.562 21.342 21.344 21.342h298.648c11.782 0 21.344-9.56 21.344-21.342V639.998H618.652z"
             fill="#E6E9ED" />

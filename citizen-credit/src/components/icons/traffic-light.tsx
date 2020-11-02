@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './traffic-light.less';
+
 // traffic light
 // https://www.iconfont.cn/collections/detail?spm=a313x.7781069.0.da5a778a4&cid=19974
 export default () => (
-    <svg className="icon" viewBox="0 0 1024 1024">
+    <svg className="icon icon-traffic-light" viewBox="0 0 1024 1024">
         <path
             d="M522.632 0.002H501.32c-11.766 0-21.294 9.562-21.294 21.312v150.216c0 11.782 9.53 21.312 21.294 21.312h21.312a21.3 21.3 0 0 0 21.312-21.312V21.314c0.002-11.75-9.53-21.312-21.312-21.312z"
             fill="#E6E9ED" />

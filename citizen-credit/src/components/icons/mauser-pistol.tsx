@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './mauser-pistol.less';
+
 // https://www.iconfont.cn/collections/detail?spm=a313x.7781069.0.da5a778a4&cid=19974
 export default () => (
-    <svg className="icon" viewBox="0 0 1024 1024">
+    <svg className="icon icon-mauser-pistol" viewBox="0 0 1024 1024">
         <path
             d="M959.988 266.668c-11.782 0-21.344-9.562-21.344-21.344v-42.656c0-11.78 9.562-21.342 21.344-21.342s21.312 9.562 21.312 21.342v42.656c0 11.782-9.53 21.344-21.312 21.344z"
             fill="#AAB2BC" />

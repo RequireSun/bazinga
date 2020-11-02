@@ -1,5 +1,5 @@
 import {observable} from 'mobx';
-import {WelfareConfig, WelfareType} from '../static/config';
+import {InquiryType, WelfareConfig, WelfareType} from '../static/config';
 import {getNextMonth1st} from '../utils/time';
 
 export enum Device {
@@ -39,5 +39,16 @@ export default class Store {
         },
     }];
     @observable
-    inquiry = [];
+    inquiry: InquiryType[] = [
+        InquiryType.Execution,
+        InquiryType.Tea,
+        InquiryType.FruitsNVegetables,
+        InquiryType.ImportedFood,
+        InquiryType.TrafficViolation,
+        InquiryType.Uncivilized,
+        InquiryType.Medicine,
+        InquiryType.Alcohol,
+        InquiryType.Tobacco,
+        InquiryType.MinistryOfLove,
+    ];
 }

@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './mixture.less';
+
 // mixture 1
 // https://www.iconfont.cn/collections/detail?spm=a313x.7781069.0.da5a778a4&cid=19974
 export default () => (
-    <svg className="icon" viewBox="0 0 1024 1024">
+    <svg className="icon icon-mixture" viewBox="0 0 1024 1024">
         <path
             d="M746.728 245.796c0 23.562-19.092 42.654-42.654 42.654H319.912c-23.562 0-42.67-19.092-42.67-42.654V42.686c0-23.562 19.108-42.654 42.67-42.654h384.162c23.562 0 42.654 19.092 42.654 42.654v203.11z"
             fill="#ED5564" />

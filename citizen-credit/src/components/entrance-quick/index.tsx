@@ -11,11 +11,13 @@ interface PropsInjected {
     welfare: WelfareInfo[];
 }
 
+export interface Props {}
+
 @inject(({ store }: { store: PropsInjected }) => ({
     welfare: store.welfare,
 }))
 @observer
-export default class EntranceQuick extends React.Component<any, any> {
+export default class EntranceQuick extends React.Component<Props, any> {
     get injected() {
         return this.props as PropsInjected;
     }

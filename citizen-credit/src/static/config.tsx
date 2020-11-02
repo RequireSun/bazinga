@@ -9,6 +9,11 @@ import IconTrafficLight from '../components/icons/traffic-light';
 import IconMauserPistol from '../components/icons/mauser-pistol';
 import IconMixture from '../components/icons/mixture';
 import IconTea from '../components/icons/tea';
+import IconDonut from '../components/icons/donut';
+import IconCabbage from '../components/icons/cabbage';
+import IconWhiskey from '../components/icons/whiskey';
+import IconCigarettes from '../components/icons/cigarettes';
+import IconTeam from '../components/icons/team';
 
 export interface CreditLevel {
     label: React.ComponentType;
@@ -155,6 +160,11 @@ export enum InquiryType {
     Execution = 'Execution',
     Medicine = 'Medicine',
     Tea = 'Tea',
+    ImportedFood = 'ImportedFood',
+    FruitsNVegetables = 'FruitsNVegetables',
+    Alcohol = 'Alcohol',
+    Tobacco = 'Tobacco',
+    MinistryOfLove = 'MinistryOfLove',
 }
 
 export interface InquiryConfig {
@@ -162,8 +172,6 @@ export interface InquiryConfig {
     icon: React.ComponentType,
 }
 
-// 进口食品
-// 本月果蔬
 export const INQUIRY: Map<InquiryType, InquiryConfig> = new Map([
     [InquiryType.Uncivilized, {
         name: '不文明行为',
@@ -184,5 +192,25 @@ export const INQUIRY: Map<InquiryType, InquiryConfig> = new Map([
     [InquiryType.Tea, {
         name: '本月新茶',
         icon: IconTea,
+    }],
+    [InquiryType.ImportedFood, {
+        name: '进口食品',
+        icon: IconDonut,
+    }],
+    [InquiryType.FruitsNVegetables, {
+        name: '本月果蔬',
+        icon: IconCabbage,
+    }],
+    [InquiryType.Alcohol, {
+        name: '酒类专营',
+        icon: IconWhiskey,
+    }],
+    [InquiryType.Tobacco, {
+        name: '烟草专营',
+        icon: IconCigarettes,
+    }],
+    [InquiryType.MinistryOfLove, {
+        name: '附近友爱部',
+        icon: IconTeam,
     }],
 ]);
