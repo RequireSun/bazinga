@@ -1,5 +1,6 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
+import { Button } from 'antd';
 import Dashboard from './dashboard';
 import ArrowIncrease from '../icons/arrow-increase';
 import { format } from '../../utils/time';
@@ -55,6 +56,7 @@ export default class Overview extends React.Component<Props, any> {
                     {Increment}
                     <span className="overview-info-part">下次更新{format('MM月DD日', nextUpdateTimestamp)}</span>
                 </div>
+                <Button type="primary">举报违法行为</Button>
             </div>
         );
     }
