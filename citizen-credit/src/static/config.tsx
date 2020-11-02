@@ -1,5 +1,7 @@
 import React from 'react';
 import ScoreLabel from '../components/overview/score-label';
+import IconCar from '../components/icons/car';
+import IconCabin from '../components/icons/cabin';
 
 export interface CreditLevel {
     label: React.ComponentType;
@@ -85,3 +87,39 @@ export const LEVEL: { [score: number]: CreditLevel; } = new Proxy({
         return undefined;
     },
 });
+
+export enum WelfareType {
+    Car = 'Car',
+    Cabin = 'Cabin',
+}
+
+export interface WelfareConfig {
+    name: string;
+    icon: React.ComponentType;
+    total: number;
+    // progress: number;
+    action?: {
+        name: string;
+        tooltip?: string;
+    };
+}
+
+export const WELFARE: Map<WelfareType, WelfareConfig> = new Map([
+    [WelfareType.Car, {
+        name: '私人轿车',
+        icon: IconCar,
+        total: 1105,
+        action: {
+            name: '切换为新能源',
+        },
+    }],
+    [WelfareType.Cabin, {
+        name: '独栋住宅',
+        icon: IconCabin,
+        total: 7470,
+        action: {
+            name: '切换住宅性质',
+            tooltip: '公寓排队速度快30%',
+        },
+    }],
+]);

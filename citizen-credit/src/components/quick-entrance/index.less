@@ -1,5 +1,7 @@
 @import "../../styles/common.less";
 
+@progress-text-width: 5em;
+
 .quick-entrance {
   .panel();
   padding: 10px 15px;
@@ -20,18 +22,26 @@
     flex-direction: row;
     align-items: center;
 
+    &+.quick-entrance-item {
+      margin-top: 10px;
+    }
+
     &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 36px;
       margin-right: 10px;
     }
 
     &-progress {
       .ant-progress-show-info .ant-progress-outer {
-        margin-right: calc(-4em - 8px);
-        padding-right: calc(4em + 8px);
+        margin-right: calc(-@progress-text-width - 8px);
+        padding-right: calc(@progress-text-width + 8px);
       }
 
       .ant-progress-show-info .ant-progress-text {
-        width: 4em;
+        width: @progress-text-width;
         font-size: 12px;
         letter-spacing: -1px;
       }
@@ -43,6 +53,16 @@
 
     &-action {
       margin-left: 10px;
+    }
+
+    &-tooltip.ant-tooltip {
+      //transform: translate(0, 4px);
+
+      .ant-tooltip-inner {
+        min-height: 26px;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
     }
   }
 }
