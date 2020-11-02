@@ -3,6 +3,7 @@ import { inject, observer } from 'mobx-react';
 import { Button, Progress, Tooltip } from 'antd';
 import { WelfareInfo } from '../../stores';
 import { WELFARE } from '../../static/config';
+import IconArrowMore from '../icons/arrow-more';
 
 import './index.less';
 
@@ -75,6 +76,10 @@ export default class QuickEntrance extends React.Component<any, any> {
                         );
                     })}
                 </ul>
+                <div className="quick-entrance-more">
+                    <span>查看更多</span>
+                    <IconArrowMore />
+                </div>
             </div>
         );
     }
