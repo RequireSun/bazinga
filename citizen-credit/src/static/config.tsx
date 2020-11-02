@@ -4,6 +4,11 @@ import IconCar from '../components/icons/car';
 import IconCabin from '../components/icons/cabin';
 import IconSpouse from '../components/icons/spouse';
 import IconResidence from '../components/icons/residence';
+import IconPoliceman from '../components/icons/policeman';
+import IconTrafficLight from '../components/icons/traffic-light';
+import IconMauserPistol from '../components/icons/mauser-pistol';
+import IconMixture from '../components/icons/mixture';
+import IconTea from '../components/icons/tea';
 
 export interface CreditLevel {
     label: React.ComponentType;
@@ -90,6 +95,11 @@ export const LEVEL: { [score: number]: CreditLevel; } = new Proxy({
     },
 });
 
+// @todo 进修机会
+//   度假
+//   健身 (training program)
+//   茅台配额
+//   伴侣动物
 export enum WelfareType {
     Car = 'Car',
     Cabin = 'Cabin',
@@ -136,5 +146,43 @@ export const WELFARE: Map<WelfareType, WelfareConfig> = new Map([
         desc: '没有户口莫着急, 何处不能献青春',
         icon: IconResidence,
         total: 9999,
+    }],
+]);
+
+export enum InquiryType {
+    Uncivilized = 'Uncivilized',
+    TrafficViolation = 'TrafficViolation',
+    Execution = 'Execution',
+    Medicine = 'Medicine',
+    Tea = 'Tea',
+}
+
+export interface InquiryConfig {
+    name: string;
+    icon: React.ComponentType,
+}
+
+// 进口食品
+// 本月果蔬
+export const INQUIRY: Map<InquiryType, InquiryConfig> = new Map([
+    [InquiryType.Uncivilized, {
+        name: '不文明行为',
+        icon: IconPoliceman,
+    }],
+    [InquiryType.TrafficViolation, {
+        name: '交通违章',
+        icon: IconTrafficLight,
+    }],
+    [InquiryType.Execution, {
+        name: '处决名单',
+        icon: IconMauserPistol,
+    }],
+    [InquiryType.Medicine, {
+        name: '进口药物名录',
+        icon: IconMixture,
+    }],
+    [InquiryType.Tea, {
+        name: '本月新茶',
+        icon: IconTea,
     }],
 ]);

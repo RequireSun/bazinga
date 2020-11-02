@@ -38,4 +38,6 @@ export default class Store {
             name: '驻马店户口',
         },
     }];
+    @observable
+    inquiry = [];
 }

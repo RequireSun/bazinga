@@ -15,7 +15,7 @@ interface PropsInjected {
     welfare: store.welfare,
 }))
 @observer
-export default class QuickEntrance extends React.Component<any, any> {
+export default class EntranceQuick extends React.Component<any, any> {
     get injected() {
         return this.props as PropsInjected;
     }
@@ -24,9 +24,9 @@ export default class QuickEntrance extends React.Component<any, any> {
         const { welfare } = this.injected;
 
         return (
-            <div className="quick-entrance">
-                <div className="quick-entrance-title">福利进度</div>
-                <ul className="quick-entrance-list">
+            <div className="entrance-quick">
+                <div className="entrance-quick-title">福利进度</div>
+                <ul className="entrance-quick-list">
                     {welfare.map(({ type, progress, override }) => {
                         let config = WELFARE.get(type);
 
@@ -43,16 +43,16 @@ export default class QuickEntrance extends React.Component<any, any> {
                         const { icon: Icon, name, desc, total, action } = config;
 
                         return (
-                            <li className="quick-entrance-item">
-                                <div className="quick-entrance-item-icon">
+                            <li className="entrance-quick-item">
+                                <div className="entrance-quick-item-icon">
                                     <Icon />
                                 </div>
-                                <div className="quick-entrance-item-info">
-                                    <div className="quick-entrance-item-title">
+                                <div className="entrance-quick-item-info">
+                                    <div className="entrance-quick-item-title">
                                         <span>{name}</span>
                                         {desc ? <span className="secondary">{desc}</span> : null}
                                     </div>
-                                    <div className="quick-entrance-item-progress">
+                                    <div className="entrance-quick-item-progress">
                                         <Progress type="line" status="exception"
                                                   format={() => `${progress} / ${total}`}
                                                   percent={progress / total * 100} />
@@ -61,13 +61,13 @@ export default class QuickEntrance extends React.Component<any, any> {
                                 {action ? (
                                     action.tooltip ? (
                                         <Tooltip title={action.tooltip} trigger="trigger" defaultVisible={true}
-                                                 overlayClassName="quick-entrance-item-tooltip">
-                                            <div className="quick-entrance-item-action">
+                                                 overlayClassName="entrance-quick-item-tooltip">
+                                            <div className="entrance-quick-item-action">
                                                 <Button type="primary" shape="round" size="small">{action.name}</Button>
                                             </div>
                                         </Tooltip>
                                     ) : (
-                                        <div className="quick-entrance-item-action">
+                                        <div className="entrance-quick-item-action">
                                             <Button type="primary" shape="round" size="small">{action.name}</Button>
                                         </div>
                                     )
@@ -76,7 +76,7 @@ export default class QuickEntrance extends React.Component<any, any> {
                         );
                     })}
                 </ul>
-                <div className="quick-entrance-more">
+                <div className="entrance-quick-more">
                     <span>查看更多</span>
                     <IconArrowMore />
                 </div>
