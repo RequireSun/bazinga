@@ -1,0 +1,48 @@
+@import "../../styles/common.less";
+
+.quick-entrance {
+  .panel();
+  padding: 10px 15px;
+
+  &-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &-list {
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &-icon {
+      margin-right: 10px;
+    }
+
+    &-progress {
+      .ant-progress-show-info .ant-progress-outer {
+        margin-right: calc(-4em - 8px);
+        padding-right: calc(4em + 8px);
+      }
+
+      .ant-progress-show-info .ant-progress-text {
+        width: 4em;
+        font-size: 12px;
+        letter-spacing: -1px;
+      }
+    }
+
+    &-info {
+      flex: 1;
+    }
+
+    &-action {
+      margin-left: 10px;
+    }
+  }
+}

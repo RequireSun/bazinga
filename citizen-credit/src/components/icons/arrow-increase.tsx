@@ -10,6 +10,7 @@ export interface Props {
     size?: 'xs' | 'small' | '';
 }
 
+// https://www.iconfont.cn/collections/detail?spm=a313x.7781069.0.da5a778a4&cid=14428
 export default ({ direction= 'obverse', size = '' }: Props = {}) => (
     <svg className={classNames("icon icon-arrow-increase", direction, size)} viewBox="0 0 1024 1024">
         <path d={PATH} />

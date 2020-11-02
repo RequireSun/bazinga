@@ -6,6 +6,7 @@ import Navigator from '../navigator';
 import Background from '../background';
 import Overview from '../overview';
 import Category from '../category';
+import QuickEntrance from '../quick-entrance';
 import { Device } from '../../stores/';
 
 import './index.less';
@@ -36,6 +37,7 @@ export default class Preview extends React.Component<Props, any> {
                     <Background />
                     <Overview />
                     <Category />
+                    <QuickEntrance />
                 </div>
             </div>
         );
