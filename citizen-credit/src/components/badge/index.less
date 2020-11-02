@@ -1,0 +1,25 @@
+@import "../../styles/theme.less";
+
+.badge {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: @main-color;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  transform: scale(.8);
+
+  &:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid @main-color;
+    border-left: 5px solid @main-color;
+  }
+}

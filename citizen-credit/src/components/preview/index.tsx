@@ -5,6 +5,7 @@ import Cover from '../cover';
 import Navigator from '../navigator';
 import Background from '../background';
 import Overview from '../overview';
+import Category from '../category';
 import { Device } from '../../stores/';
 
 import './index.less';
@@ -34,6 +35,7 @@ export default class Preview extends React.Component<Props, any> {
                 <div className="preview-bd">
                     <Background />
                     <Overview />
+                    <Category />
                 </div>
             </div>
         );
