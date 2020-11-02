@@ -35,7 +35,7 @@ export default class EntranceInquiry extends React.Component<Props, any> {
                         if (_iq && _iq.name && _iq.icon) {
                             const { icon: Icon, name } = _iq;
                             return (
-                                <Col span={6} className="entrance-inquiry-item">
+                                <Col span={'1o5'} className="entrance-inquiry-item">
                                     <Icon />
                                     <div className="entrance-inquiry-item-title">{name}</div>
                                 </Col>
