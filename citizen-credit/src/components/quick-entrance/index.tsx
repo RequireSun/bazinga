@@ -26,14 +26,20 @@ export default class QuickEntrance extends React.Component<any, any> {
             <div className="quick-entrance">
                 <div className="quick-entrance-title">福利进度</div>
                 <ul className="quick-entrance-list">
-                    {welfare.map(({ type, progress }) => {
-                        const config = WELFARE.get(type);
+                    {welfare.map(({ type, progress, override }) => {
+                        let config = WELFARE.get(type);
 
                         if (!config) {
                             return null;
                         }
+                        if (override) {
+                            config = {
+                                ...config,
+                                ...override,
+                            };
+                        }
 
-                        const { icon: Icon, name, total, action } = config;
+                        const { icon: Icon, name, desc, total, action } = config;
 
                         return (
                             <li className="quick-entrance-item">
@@ -41,7 +47,10 @@ export default class QuickEntrance extends React.Component<any, any> {
                                     <Icon />
                                 </div>
                                 <div className="quick-entrance-item-info">
-                                    <div className="quick-entrance-item-title">{name}</div>
+                                    <div className="quick-entrance-item-title">
+                                        <span>{name}</span>
+                                        {desc ? <span className="secondary">{desc}</span> : null}
+                                    </div>
                                     <div className="quick-entrance-item-progress">
                                         <Progress type="line" status="exception"
                                                   format={() => `${progress} / ${total}`}

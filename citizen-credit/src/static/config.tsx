@@ -3,6 +3,7 @@ import ScoreLabel from '../components/overview/score-label';
 import IconCar from '../components/icons/car';
 import IconCabin from '../components/icons/cabin';
 import IconSpouse from '../components/icons/spouse';
+import IconResidence from '../components/icons/residence';
 
 export interface CreditLevel {
     label: React.ComponentType;
@@ -93,13 +94,14 @@ export enum WelfareType {
     Car = 'Car',
     Cabin = 'Cabin',
     Spouse = 'Spouse',
+    Residence = 'Residence',
 }
 
 export interface WelfareConfig {
     name: string;
+    desc?: string;
     icon: React.ComponentType;
     total: number;
-    // progress: number;
     action?: {
         name: string;
         tooltip?: string;
@@ -128,5 +130,11 @@ export const WELFARE: Map<WelfareType, WelfareConfig> = new Map([
         name: '革命伴侣',
         icon: IconSpouse,
         total: 5000,
-    }]
+    }],
+    [WelfareType.Residence, {
+        name: '落户',
+        desc: '没有户口莫着急, 何处不能献青春',
+        icon: IconResidence,
+        total: 9999,
+    }],
 ]);

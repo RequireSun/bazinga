@@ -1,5 +1,5 @@
 import {observable} from 'mobx';
-import {WelfareType} from '../static/config';
+import {WelfareConfig, WelfareType} from '../static/config';
 import {getNextMonth1st} from '../utils/time';
 
 export enum Device {
@@ -9,6 +9,7 @@ export enum Device {
 export interface WelfareInfo {
     type: WelfareType;
     progress: number;
+    override?: { [key in keyof WelfareConfig]?: any; };
 }
 
 export default class Store {
@@ -30,5 +31,11 @@ export default class Store {
     }, {
         type: WelfareType.Spouse,
         progress: 700,
+    }, {
+        type: WelfareType.Residence,
+        progress: 60,
+        override: {
+            name: '驻马店户口',
+        },
     }];
 }
