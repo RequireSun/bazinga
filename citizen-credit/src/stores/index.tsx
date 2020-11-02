@@ -1,6 +1,6 @@
-import { observable } from 'mobx';
-import { WelfareType } from '../static/config';
-import { getNextMonth1st } from '../utils/time';
+import {observable} from 'mobx';
+import {WelfareType} from '../static/config';
+import {getNextMonth1st} from '../utils/time';
 
 export enum Device {
     iPhone8Plus = 'iPhone 8 Plus',
@@ -27,5 +27,8 @@ export default class Store {
     }, {
         type: WelfareType.Cabin,
         progress: 2700,
+    }, {
+        type: WelfareType.Spouse,
+        progress: 700,
     }];
 }
