@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 import './index.less';
 
-const store = new Store();
+const store = window.__store__ = new Store();
 
 ReactDOM.render(
   <React.StrictMode>

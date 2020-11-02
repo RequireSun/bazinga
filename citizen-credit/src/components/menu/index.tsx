@@ -27,7 +27,7 @@ export default class NavSection extends React.Component<Props, any> {
         const { section, sectionActive } = this.injected;
 
         return (
-            <div className="nav-section">
+            <div className="menu">
                 {section.map(({ type }) => {
                     const config = SECTION.get(type);
 
@@ -35,9 +35,9 @@ export default class NavSection extends React.Component<Props, any> {
                         const { icon: Icon, name } = config;
 
                         return (
-                            <div className={classNames("nav-section-item", type === sectionActive ? 'active' : '')}>
+                            <div className={classNames("menu-item", type === sectionActive ? 'active' : '')}>
                                 <Icon />
-                                <span className="nav-section-item-title">{name}</span>
+                                <span className="menu-item-title">{name}</span>
                             </div>
                         );
                     } else {

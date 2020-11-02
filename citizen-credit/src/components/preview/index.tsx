@@ -8,7 +8,7 @@ import Overview from '../overview';
 import EntranceCategory from '../entrance-category';
 import EntranceQuick from '../entrance-quick';
 import EntranceInquiry from '../entrance-inquiry';
-import NavSection from '../nav-section';
+import Menu from '../menu';
 import { Device } from '../../stores/';
 
 import './index.less';
@@ -42,7 +42,7 @@ export default class Preview extends React.Component<Props, any> {
                     <EntranceQuick />
                     <EntranceInquiry />
                 </div>
-                <NavSection />
+                <Menu />
             </div>
         );
     }

@@ -21,7 +21,7 @@ export interface Props {}
     nextUpdateTimestamp: store.nextUpdateTimestamp,
 }))
 @observer
-export default class Overview extends React.Component<Props, any> {
+export default class Overview extends React.PureComponent<Props, any> {
     get injected() {
         return this.props as PropsInjected;
     }

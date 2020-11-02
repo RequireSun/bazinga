@@ -1,5 +1,5 @@
 import React from 'react';
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 import { InquiryType, WelfareConfig, WelfareType, SectionType } from '../static/config';
 import { getNextMonth1st } from '../utils/time';
 
@@ -22,6 +22,16 @@ export default class Store {
     device: Device = Device.iPhone8Plus;
     @observable
     score: number = 999;
+    @action
+    setScore = (score: number | string = this.score) => {
+        console.log(111, score);
+        if (typeof(score) !== 'number') {
+            score = parseInt(score as string);
+        }
+        console.log(222, score);
+        this.score = score;
+    };
+
     @observable
     increment: number = -1;
     @observable
