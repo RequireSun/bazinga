@@ -2,7 +2,7 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import { Button, Progress, Tooltip } from 'antd';
 import { WelfareInfo } from '../../stores';
-import { WELFARE } from '../../static/config';
+import { WELFARE, WelfareType } from '../../static/config';
 import IconArrowMore from '../icons/arrow-more';
 
 import './index.less';
@@ -13,17 +13,48 @@ interface PropsInjected {
 
 export interface Props {}
 
+interface State {
+    tooltipVisible: Set<WelfareType>;
+}
+
 @inject(({ store }: { store: PropsInjected }) => ({
     welfare: store.welfare,
 }))
 @observer
-export default class EntranceQuick extends React.Component<Props, any> {
+export default class EntranceQuick extends React.Component<Props, State> {
+    state = {
+        tooltipVisible: new Set<WelfareType>(),
+    };
+
+    constructor(props: any) {
+        super(props);
+
+        for (const [type, config] of WELFARE.entries()) {
+            if (config.action && config.action.tooltip) {
+                this.state.tooltipVisible.add(type);
+            }
+        }
+    }
+
+    changeTooltipVisible = (type: WelfareType) => {
+        const { tooltipVisible } = this.state;
+        if (tooltipVisible.has(type)) {
+            tooltipVisible.delete(type);
+        } else {
+            tooltipVisible.add(type);
+        }
+        this.setState({
+            tooltipVisible,
+        });
+    };
+
     get injected() {
         return this.props as PropsInjected;
     }
 
     render() {
         const { welfare } = this.injected;
+        const { tooltipVisible } = this.state;
 
         return (
             <div className="entrance-quick">
@@ -62,10 +93,10 @@ export default class EntranceQuick extends React.Component<Props, any> {
                                 </div>
                                 {action ? (
                                     action.tooltip ? (
-                                        <Tooltip title={action.tooltip} trigger="trigger" defaultVisible={true}
+                                        <Tooltip title={action.tooltip} trigger="trigger" visible={tooltipVisible.has(type)}
                                                  overlayClassName="entrance-quick-item-tooltip">
                                             <div className="entrance-quick-item-action">
-                                                <Button type="primary" shape="round" size="small">{action.name}</Button>
+                                                <Button type="primary" shape="round" size="small" onClick={this.changeTooltipVisible.bind(this, type)}>{action.name}</Button>
                                             </div>
                                         </Tooltip>
                                     ) : (

@@ -138,7 +138,7 @@ export const WELFARE: Map<WelfareType, WelfareConfig> = new Map([
         total: 7470,
         action: {
             name: '切换住宅性质',
-            tooltip: '公寓排队速度快30%',
+            tooltip: '换成公寓, 排队快30%',
         },
     }],
     [WelfareType.Spouse, {

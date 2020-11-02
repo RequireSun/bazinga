@@ -1,9 +1,14 @@
 .preview-container {
   background-color: #f6f6f6;
+  overflow-y: scroll;
 
   &.iphone-8-plus {
     width: 414px;
     height: 736px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
   }
 }
 
