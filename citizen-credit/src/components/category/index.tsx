@@ -1,6 +1,8 @@
 import React from 'react';
 import Badge from '../badge';
 
+import './index.less';
+
 export default () => (
     <div className="category-container">
         <div className="category-item">
