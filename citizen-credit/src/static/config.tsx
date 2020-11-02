@@ -14,6 +14,10 @@ import IconCabbage from '../components/icons/cabbage';
 import IconWhiskey from '../components/icons/whiskey';
 import IconCigarettes from '../components/icons/cigarettes';
 import IconTeam from '../components/icons/team';
+import IconConnection from '../components/icons/connection';
+import IconApproveDocument from '../components/icons/approve-document';
+import IconRubberStamp from '../components/icons/rubber-stamp';
+import IconInprivateAccount from '../components/icons/inprivate-account';
 
 export interface CreditLevel {
     label: React.ComponentType;
@@ -212,5 +216,36 @@ export const INQUIRY: Map<InquiryType, InquiryConfig> = new Map([
     [InquiryType.MinistryOfLove, {
         name: '附近友爱部',
         icon: IconTeam,
+    }],
+]);
+
+export enum SectionType {
+    Credit = 'Credit',
+    Record = 'Record',
+    Personal = 'Personal',
+    Approval = 'Approval',
+}
+
+export interface SectionConfig {
+    name: string;
+    icon: React.ComponentType;
+}
+
+export const SECTION: Map<SectionType, SectionConfig> = new Map([
+    [SectionType.Credit, {
+        name: '人民信用',
+        icon: IconConnection,
+    }],
+    [SectionType.Record, {
+        name: '信用记录',
+        icon: IconApproveDocument,
+    }],
+    [SectionType.Approval, {
+        name: '审批',
+        icon: IconRubberStamp,
+    }],
+    [SectionType.Personal, {
+        name: '个人中心',
+        icon: IconInprivateAccount,
     }],
 ]);

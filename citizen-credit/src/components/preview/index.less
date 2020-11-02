@@ -1,14 +1,11 @@
 .preview-container {
+  display: flex;
+  flex-direction: column;
   background-color: #f6f6f6;
-  overflow-y: scroll;
 
   &.iphone-8-plus {
     width: 414px;
     height: 736px;
-  }
-
-  &::-webkit-scrollbar {
-    width: 0 !important;
   }
 }
 
@@ -17,5 +14,10 @@
     position: relative;
     z-index: 0;
     padding: 8px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
   }
 }

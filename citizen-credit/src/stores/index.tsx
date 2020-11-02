@@ -1,6 +1,7 @@
-import {observable} from 'mobx';
-import {InquiryType, WelfareConfig, WelfareType} from '../static/config';
-import {getNextMonth1st} from '../utils/time';
+import React from 'react';
+import { observable } from 'mobx';
+import { InquiryType, WelfareConfig, WelfareType, SectionType } from '../static/config';
+import { getNextMonth1st } from '../utils/time';
 
 export enum Device {
     iPhone8Plus = 'iPhone 8 Plus',
@@ -10,6 +11,10 @@ export interface WelfareInfo {
     type: WelfareType;
     progress: number;
     override?: { [key in keyof WelfareConfig]?: any; };
+}
+
+export interface SectionInfo {
+    type: SectionType;
 }
 
 export default class Store {
@@ -51,4 +56,16 @@ export default class Store {
         InquiryType.Tobacco,
         InquiryType.MinistryOfLove,
     ];
+    @observable
+    section: SectionInfo[] = [{
+        type: SectionType.Credit,
+    }, {
+        type: SectionType.Record,
+    }, {
+        type: SectionType.Approval,
+    }, {
+        type: SectionType.Personal,
+    },];
+    @observable
+    sectionActive: SectionType = SectionType.Credit;
 }
